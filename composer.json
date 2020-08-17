@@ -140,7 +140,6 @@
     },
     "scripts": {
         "compile": {
-            "doctrine:schema:create": "bin/console doctrine:schema:create",
             "eccube:fixtures:load": "bin/console eccube:fixtures:load"
         },
         "auto-scripts": {
