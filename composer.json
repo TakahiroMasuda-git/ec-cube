@@ -140,6 +140,7 @@
     },
     "scripts": {
         "compile": {
+            "./exec_install.sh"
         },
         "auto-scripts": {
             "cache:clear --no-warmup": "symfony-cmd",
