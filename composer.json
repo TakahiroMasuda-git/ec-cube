@@ -139,9 +139,7 @@
         }
     },
     "scripts": {
-        "compile": {
-            "./exec_install.sh"
-        },
+        "compile": "./exec_install.sh",
         "auto-scripts": {
             "cache:clear --no-warmup": "symfony-cmd",
             "cache:warmup --no-optional-warmers": "symfony-cmd",
