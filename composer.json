@@ -140,7 +140,6 @@
     },
     "scripts": {
         "compile": {
-            "eccube:fixtures:load": "bin/console eccube:fixtures:load"
         },
         "auto-scripts": {
             "cache:clear --no-warmup": "symfony-cmd",
