@@ -139,7 +139,11 @@
         }
     },
     "scripts": {
-        "compile": "./exec_install.sh",
+        "compile": {
+            "doctrine:database:create": "bin/console doctrine:database:create",
+            "doctrine:schema:create": "bin/console doctrine:schema:create",
+            "eccube:fixtures:load": "bin/console eccube:fixtures:load"
+        },
         "auto-scripts": {
             "cache:clear --no-warmup": "symfony-cmd",
             "cache:warmup --no-optional-warmers": "symfony-cmd",
