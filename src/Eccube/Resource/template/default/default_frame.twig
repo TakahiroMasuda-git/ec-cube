@@ -53,7 +53,10 @@ file that was distributed with this source code.
     {# プラグイン用styleseetやmetatagなど #}
     {% if plugin_assets is defined %}{{ include('@admin/snippet.twig', { snippets: plugin_assets }) }}{% endif %}
     <link rel="stylesheet" href="{{ asset('assets/css/customize.css', 'user_data') }}">
-    <script type="text/javascript" src="//cdn.evgnet.com/beacon/imjcorp/sfdc/scripts/evergage.min.js"></script>
+    <!-- IS Web Beacon -->
+        <!--<script type="text/javascript" src="//cdn.evgnet.com/beacon/imjcorp/sfdc/scripts/evergage.min.js"></script>-->
+        <script type="text/javascript" src="//cdn.evgnet.com/beacon/imjcorp/engage/scripts/evergage.min.js"></script>
+    <!-- // IS Web Beacon -->
 </head>
 <body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}">
 {# Layout: BODY_AFTER #}
