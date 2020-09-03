@@ -31,7 +31,8 @@ file that was distributed with this source code.
 </div>
 
 <div class="ec-welcomeMsg">
-    <p>{{ 'front.mypage.welcome'|<span>trans({ '%last_name%': app.user.name01, '%first_name%': app.user.name02 })</span> }}</p>
+    <p><span class="lastname">{{ app.user.name01 }}</span>　<span class="firstname">{{ app.user.name02 }}</span>
+    {{ 'front.mypage.welcome'|trans({ '%last_name%': app.user.name01, '%first_name%': app.user.name02 }) }}</p>
     {% if BaseInfo.option_point %}
         <p>{{ 'front.mypage.welcome__point'|trans({ '%point%': app.user.point|number_format}) }}</p>
     {% endif %}
