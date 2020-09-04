@@ -76,6 +76,28 @@ file that was distributed with this source code.
                 {{ Order.complete_message|raw }}
             {% endif %}
 
+            {% for shipping in Order.shippings %}
+                <ul>
+                {% for orderItem in shipping.productOrderItems %}
+                    <li>
+                        <div class="ec-imageGrid">
+                            <div class="ec-imageGrid__img"><img src="{{ asset((orderItem.product is null ? null : orderItem.product.MainListImage)|no_image_product, 'save_image') }}" alt="{{ orderItem.productName }}"></div>
+                            <div class="ec-imageGrid__content">
+                                <p class="lineitem" data-pid="{{ orderItem.product.id }}">{{ orderItem.productName }}{% if is_reduced_tax_rate(orderItem) %}{{ 'common.reduced_tax_rate_symbol'|trans }}{% set isShowReducedTaxMess = true %}{% endif %}</p>
+                                {% if orderItem.productClass is not null and orderItem.productClass.classCategory1 %}
+                                    <p>{{ orderItem.productClass.classCategory1.className.name }}：{{ orderItem.productClass.classCategory1 }}</p>
+                                {% endif %}
+                                {% if orderItem.productClass is not null and orderItem.productClass.classCategory2 %}
+                                    <p>{{ orderItem.productClass.classCategory2.className.name }}：{{ orderItem.productClass.classCategory2 }}</p>
+                                {% endif %}
+                                <p><span class="price">{{ orderItem.priceIncTax|price }}</span> × <span class="quantity">{{ orderItem.quantity|number_format }}</span><span>{{ 'common.subtotal__with_separator'|trans }}{{ orderItem.totalPrice|price }}</span></p>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endfor %}
+
             <div class="ec-off4Grid">
                 {% if hasNextCart %}
                     <div class="ec-off4Grid__cell"><a class="ec-blockBtn--primary" href="{{ url('cart') }}">{{ 'front.shopping.continue'|trans }}</a></div>
