@@ -2,11 +2,12 @@
 
 namespace Customize\Controller;
 
+use Eccube\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-class GetCategoriesController
+class GetCategoriesController extends AbstractController
 {
     /**
      * @Method("GET")
@@ -20,6 +21,9 @@ class GetCategoriesController
             'melon'=>'fruits3',
             'pineapple'=>'fruits4'
         ];
+
+        $categories = $this->entityManager->getRepository('Eccube\Entity\Category')->getProductCategories(;
+        print_r($categories);
         $jsonstr =  json_encode($fruits_array);
         return new Response(
             $jsonstr,
