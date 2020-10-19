@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
+//https://doc4.ec-cube.net/customize_controller
 class GetCategoriesController extends AbstractController
 {
     /**
@@ -16,9 +17,9 @@ class GetCategoriesController extends AbstractController
     public function testMethod()
     {
         $categories = [
-            '7'=>'WOMAN',
-            '8'=>'MEN',
-            '9'=>'KIDS'
+            ["id"=>"7","name"=>"WOMAN"],
+            ["id"=>"8","name"=>"MEN"],
+            ["id"=>"9","name"=>"KIDS"]
         ];
 
         $jsonstr =  json_encode($categories);
