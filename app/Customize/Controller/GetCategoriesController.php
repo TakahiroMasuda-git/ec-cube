@@ -16,7 +16,7 @@ class GetCategoriesController extends AbstractController
      */
     public function testMethod()
     {
-        $categories = [
+        $categories->categories = [
             ["id"=>"7","name"=>"WOMAN"],
             ["id"=>"8","name"=>"MEN"],
             ["id"=>"9","name"=>"KIDS"]
