@@ -15,16 +15,13 @@ class GetCategoriesController extends AbstractController
      */
     public function testMethod()
     {
-        $fruits_array = [
-            'apple'=>'fruits1',
-            'orange'=>'fruits2',
-            'melon'=>'fruits3',
-            'pineapple'=>'fruits4'
+        $categories = [
+            '7'=>'WOMAN',
+            '8'=>'MEN',
+            '9'=>'KIDS'
         ];
 
-        $categories = $this->entityManager->getRepository('Eccube\Entity\Category')->getProductCategories(;
-        print_r($categories);
-        $jsonstr =  json_encode($fruits_array);
+        $jsonstr =  json_encode($categories);
         return new Response(
             $jsonstr,
             Response::HTTP_OK,
