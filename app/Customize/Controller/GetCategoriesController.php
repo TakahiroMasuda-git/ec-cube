@@ -14,6 +14,12 @@ class GetCategoriesController
      */
     public function testMethod()
     {
-        return new Response('Hello sample page !');
+        $fruits_array = ['apple'=>'fruits1',
+                 'orange'=>'fruits2',
+                 'melon'=>'fruits3',
+                 'pineapple'=>'fruits4'
+                ];
+        $jsonstr =  json_encode($fruits_array);
+        return new Response($jsonstr);
     }
 }
