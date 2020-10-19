@@ -20,8 +20,9 @@ class GetCategoriesController
             'melon'=>'fruits3',
             'pineapple'=>'fruits4'
         ];
+        $jsonstr =  json_encode($fruits_array);
         header("Content-Type: application/json; charset=utf-8");
-        echo json_encode($jsonstr);
+        echo $jsonstr;
         //$jsonstr =  json_encode($fruits_array);
         //return new Response($jsonstr);
     }
