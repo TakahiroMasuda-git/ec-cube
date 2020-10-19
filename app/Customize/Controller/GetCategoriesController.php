@@ -21,9 +21,10 @@ class GetCategoriesController
             'pineapple'=>'fruits4'
         ];
         $jsonstr =  json_encode($fruits_array);
-        header("Content-Type: application/json; charset=utf-8");
-        echo $jsonstr;
-        //$jsonstr =  json_encode($fruits_array);
-        //return new Response($jsonstr);
+        return new Response(
+            $jsonstr,
+            Response::HTTP_OK,
+            array('Content-Type' => 'application/json; charset=utf-8')
+        );
     }
 }
