@@ -17,9 +17,30 @@ class GetProductsController extends AbstractController
     public function testMethod()
     {
         $products->products = [
-            ["id"=>"7","name"=>"WOMAN"],
-            ["id"=>"8","name"=>"MEN"],
-            ["id"=>"9","name"=>"KIDS"]
+            [
+                "category_id"=>"1",
+                "category"=>"WOMAN",
+                "id"=>"1",
+                "name"=>"Product 1",
+                "price"=>"1000",
+                "description"=>"Description 1"
+            ],
+            [
+                "category_id"=>"2",
+                "category"=>"MEN",
+                "id"=>"2",
+                "name"=>"Product 2",
+                "price"=>"1000",
+                "description"=>"Description 2"
+            ],
+            [[
+                "category_id"=>"3",
+                "category"=>"KIDS",
+                "id"=>"3",
+                "name"=>"Product 3",
+                "price"=>"1000",
+                "description"=>"Description 3"
+            ]
         ];
 
         $jsonstr =  json_encode($products);
