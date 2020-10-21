@@ -33,7 +33,7 @@ class GetProductsController extends AbstractController
                 "price"=>"1000",
                 "description"=>"Description 2"
             ],
-            [[
+            [
                 "category_id"=>"3",
                 "category"=>"KIDS",
                 "id"=>"3",
