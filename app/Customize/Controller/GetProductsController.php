@@ -22,7 +22,7 @@ class GetProductsController extends AbstractController
             ["id"=>"9","name"=>"KIDS"]
         ];
 
-        $jsonstr =  json_encode($categories);
+        $jsonstr =  json_encode($products);
         return new Response(
             $jsonstr,
             Response::HTTP_OK,
