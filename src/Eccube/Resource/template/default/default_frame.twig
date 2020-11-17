@@ -59,12 +59,22 @@ file that was distributed with this source code.
         var _aaq = window._aaq || (window._aaq = []);
 
         (function(){
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript'; g.async = true;
+            g.src = document.location.protocol + '//salesforcesandbox.devergage.com/beacon/salesforcesandbox/tmasuda/scripts/evergage.min.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+    <!--<script type="text/javascript">
+        var _aaq = window._aaq || (window._aaq = []);
+
+        (function(){
             var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
                 g.type = 'text/javascript'; g.async = true;
                 g.src = document.location.protocol + '//cdn.evgnet.com/beacon/imjcorp/sfdc/scripts/evergage.min.js';
                 s.parentNode.insertBefore(g, s);
         })();
-    </script>
+    </script>-->
     <!-- // IS Web Beacon -->
 </head>
 <body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}">
