@@ -32,6 +32,9 @@ DirectoryIndex index.php index.html .ht
 
     RewriteEngine On
 
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
     # Authorization ヘッダが取得できない環境への対応
     RewriteCond %{HTTP:Authorization} ^(.*)
     RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
