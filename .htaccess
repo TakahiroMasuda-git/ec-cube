@@ -33,8 +33,8 @@ DirectoryIndex index.php index.html .ht
     RewriteEngine On
 
     # Authorization ヘッダが取得できない環境への対応
-    # RewriteCond %{HTTP:Authorization} ^(.*)
-    # RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
 
     RewriteRule "^\.git" - [F]
     RewriteRule "^src/" - [F]
@@ -50,9 +50,9 @@ DirectoryIndex index.php index.html .ht
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !^(.*)\.(gif|png|jpe?g|css|ico|js|svg|map)$ [NC]
-    # RewriteRule ^(.*)$ index.php [QSA,L]
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    RewriteRule ^(.*)$ index.php [QSA,L]
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 # 管理画面へのBasic認証サンプル
