@@ -3,7 +3,7 @@ parameters:
     env(ECCUBE_ADMIN_ROUTE): 'admin'
     env(ECCUBE_USER_DATA_ROUTE): 'user_data'
     env(ECCUBE_ADMIN_ALLOW_HOSTS): '[]'
-    env(ECCUBE_FORCE_SSL): true
+    env(ECCUBE_FORCE_SSL): false
     env(ECCUBE_TEMPLATE_CODE): 'default'
     env(ECCUBE_AUTH_MAGIC): '<change.me>'
     env(ECCUBE_COOKIE_NAME): 'eccube'
