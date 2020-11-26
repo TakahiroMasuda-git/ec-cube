@@ -55,7 +55,7 @@ file that was distributed with this source code.
     {% if plugin_assets is defined %}{{ include('@admin/snippet.twig', { snippets: plugin_assets }) }}{% endif %}
     <link rel="stylesheet" href="{{ asset('assets/css/customize.css', 'user_data') }}">
     <!-- IS Web Beacon -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         var _aaq = window._aaq || (window._aaq = []);
 
         (function(){
@@ -64,8 +64,8 @@ file that was distributed with this source code.
             g.src = document.location.protocol + '//salesforcesandbox.devergage.com/beacon/salesforcesandbox/tmasuda/scripts/evergage.min.js';
             s.parentNode.insertBefore(g, s);
         })();
-    </script>
-    <!--<script type="text/javascript">
+    </script>-->
+    <script type="text/javascript">
         var _aaq = window._aaq || (window._aaq = []);
 
         (function(){
@@ -74,7 +74,7 @@ file that was distributed with this source code.
                 g.src = document.location.protocol + '//cdn.evgnet.com/beacon/imjcorp/sfdc/scripts/evergage.min.js';
                 s.parentNode.insertBefore(g, s);
         })();
-    </script>-->
+    </script>
     <!-- // IS Web Beacon -->
 </head>
 <body id="page_{{ app.request.get('_route') }}" class="{{ body_class|default('other_page') }}">
